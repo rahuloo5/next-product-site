@@ -1,11 +1,9 @@
 .container {
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 .product {
-  padding: 16px;
-  width: 300px;
+  width: 450px;
   background-color: white;
 }

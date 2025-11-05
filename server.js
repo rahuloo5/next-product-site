@@ -24,7 +24,7 @@ app.prepare().then(() => {
     });
   });
 
-  global.io = io; // make io accessible globally
+  global.io = io;
 
   server.listen(3000, () => {
     console.log('Server listening on http://localhost:3000');

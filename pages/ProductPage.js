@@ -27,10 +27,22 @@ export default function ProductPage({ userId }) {
           {productData.map((product) => (
             <div key={product.id} className={styles.product}>
               <h3 className={`mb-3 text-2xl font-semibold`}>{product.name}</h3>
-              <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>Price: {product.price}</p>
-              <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>Description: {product.description}</p>
-              <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>Category: {product.category}</p>
-              <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>Stock: {product.countInStock}</p>
+              <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
+                {' '}
+                <strong>Price:</strong> {product.price} $
+              </p>
+              <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
+                {' '}
+                <strong>Description:</strong> {product.description}
+              </p>
+              <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
+                {' '}
+                <strong>Category:</strong> {product.category}
+              </p>
+              <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
+                {' '}
+                <strong> Stock: </strong> {product.countInStock}
+              </p>
 
               <ReviewForm productId={product.id} userId={userId} onReviewSubmitted={() => setRefresh(!refresh)} />
               <ReviewList productId='0e5e5900-29dd-46d6-af40-f8be36445b81' key={refresh} sortBy='newest' />

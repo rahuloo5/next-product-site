@@ -28,7 +28,9 @@ export default function ReviewForm({ productId, userId, onReviewSubmitted }) {
   return (
     <form onSubmit={handleSubmit}>
       <h3>Leave a Review</h3>
-      <label>Rating:</label>
+      <label>
+        <strong>Rating:</strong>
+      </label>
       <StarRatingInput rating={rating} setRating={setRating} />
       <br />
       <div
@@ -37,7 +39,7 @@ export default function ReviewForm({ productId, userId, onReviewSubmitted }) {
           alignItems: 'center',
         }}
       >
-        <label style={{ marginRight: '16px' }}>Comment:</label>
+        <label style={{ marginRight: '16px', fontSize: '14PX', fontWeight: '400' }}>Comment:</label>
         <textarea value={comment} onChange={(e) => setComment(e.target.value)} />
       </div>
       <br />
@@ -46,7 +48,20 @@ export default function ReviewForm({ productId, userId, onReviewSubmitted }) {
           padding: '16px',
         }}
       >
-        <button type='submit' disabled={loading}>
+        <button
+          type='submit'
+          disabled={loading}
+          style={{
+            backgroundColor: 'black',
+            color: 'white',
+            padding: '12px 24px',
+            fontSize: '16px',
+            fontWeight: '600',
+            border: 'none',
+            borderRadius: '4px',
+            cursor: 'pointer',
+          }}
+        >
           {loading ? 'Submitting...' : 'Submit Review'}
         </button>
       </div>

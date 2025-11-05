@@ -72,10 +72,27 @@ export default function ReviewList({ productId, sortBy = 'newest' }) {
           <div key={review._id} style={{ borderBottom: '1px solid #ccc', marginBottom: '1rem' }}>
             <StarRatingDisplay rating={review.rating} />
             <p>{review.comment}</p>
-            <small>By User: {review.userId}</small>
+            <p style={{ margin: '2px 0', fontSize: '12px', fontWeight: '400' }}>By User: {review.userId}</p>
 
             <br />
-            <button onClick={() => voteHelpful(review._id)}>Helpful</button>
+
+            <button
+              style={{
+                backgroundColor: 'black',
+                color: 'white',
+                padding: '8px 12px',
+                fontSize: '14px',
+                fontWeight: '600',
+                border: 'none',
+                borderRadius: '4px',
+                cursor: 'pointer',
+                width: 'auto',
+              }}
+              onClick={() => voteHelpful(review._id)}
+            >
+              Helpful
+            </button>
+
             <span> ({review.helpfulVotes || 0} found this helpful)</span>
           </div>
         ))
